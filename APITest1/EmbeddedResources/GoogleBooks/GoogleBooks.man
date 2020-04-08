@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>8500f072-2bb0-40d4-a501-d390f45e62d9</ID>
+  <Name>GoogleBooks</Name>
+  <Type>REST</Type>
+  <Version>1</Version>
+  <CreationDate>2020-02-13T15:48:52.3026765-03:00</CreationDate>
+  <UpdateDate>2020-02-13T15:48:52.3026765-03:00</UpdateDate>
+  <LoaderID>SignatureResourceHandler</LoaderID>
+  <MetaDataSignatureFile>f535f530-7c88-45cd-b256-5c943e00985f.xml</MetaDataSignatureFile>
+  <TestResourceId>f535f530-7c88-45cd-b256-5c943e00985f</TestResourceId>
+  <RepositoryType>TestRepository</RepositoryType>
+  <SignatureCodonId>HP.ST.RestDesignTime.RestServicesV2</SignatureCodonId>
+  <SignatureAddinVersion>14.51.1072.0</SignatureAddinVersion>
+  <Properties>
+    <Item>
+      <Key>
+        <string>RepositoryPath</string>
+      </Key>
+      <Value>
+        <string>C:\WORKAREA\Application1\APITest1\EmbeddedResources</string>
+      </Value>
+    </Item>
+    <Item>
+      <Key>
+        <string>ResourceOrigin</string>
+      </Key>
+      <Value>
+        <string>C:\WORKAREA\Application1\APITest1\EmbeddedResources\GoogleBooks</string>
+      </Value>
+    </Item>
+    <Item>
+      <Key>
+        <string>PrototypeDbVersion</string>
+      </Key>
+      <Value>
+        <string>14.51.1072.0</string>
+      </Value>
+    </Item>
+  </Properties>
+</ResourceManifest>

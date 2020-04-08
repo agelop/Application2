@@ -1,0 +1,9 @@
+Result*
+Log
+DatabaseBackup
+Snapshots
+obj
+*.log
+flow.png
+FlowSerialization.zip
+
