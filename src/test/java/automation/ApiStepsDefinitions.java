@@ -32,7 +32,7 @@ public class ApiStepsDefinitions {
 	public void the_response_status_code_is(int status) throws IOException {
 	    // Write code here that turns the phrase above into concrete actions
 	    // Assert.assertEquals(status, connection.getResponseCode());
-	    Assert.assertEquals(status, 200);
+	    Assert.assertEquals(status, connection.getResponseCode());
 	    connection.disconnect();
 	}
 

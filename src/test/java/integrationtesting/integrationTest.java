@@ -3,6 +3,11 @@ package integrationtesting;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class integrationTest {
 
     @Test
@@ -30,8 +35,15 @@ public class integrationTest {
     }
 
     @Test
-    public void integrationtestConquista(){
-    System.out.println("This is a integration test for Conquista...");
-    Assert.assertTrue(true);
+    public void integrationapitest() throws IOException {
+        System.out.println("This is a integration api test ...");
+        URL url;
+        HttpURLConnection connection;
+        String service = "https://www.googleapis.com/books/v1/volumes/s1gVAAAAYAAJ";
+        url = new URL(service);
+        connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        Assert.assertEquals(200, connection.getResponseCode());
+        connection.disconnect();
     }
 }

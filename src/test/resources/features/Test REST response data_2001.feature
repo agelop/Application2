@@ -11,5 +11,4 @@ Feature: Testing REST API
 	Examples:
 	| url | method | status |
 	| https://www.googleapis.com/books/v1/volumes/s1gVAAAAYAAJ | GET | 200 |
-	| https://www.googleapis.com/books/v1/volumes/s1gVABXAYAAJ | GET | 200 |
-	| http://www.googleapis.com/books/v1/volumes/s1gVABCAYAAJ  | GET | 200 |
+	| https://www.googleapis.com/books/v1/volumes/s1gVABXAYAAJ | GET | 404 |

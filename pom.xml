@@ -33,6 +33,21 @@
             <artifactId>octane-cucumber-jvm</artifactId>
             <version>12.60.48</version>
         </dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.53.1</version>
+		</dependency>
+
+		<dependency>
+			<!-- https://github.com/bonigarcia/webdrivermanager#webdrivermanager-as-java-dependency
+                   https://stackoverflow.com/questions/7450416/selenium-2-chrome-driver
+             -->
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
