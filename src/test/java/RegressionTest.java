@@ -43,15 +43,12 @@ public class RegressionTest {
         driver = new ChromeDriver(options);
 
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
-        wait.pollingEvery(5, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 20);
+        wait.pollingEvery(10, TimeUnit.SECONDS);
 
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
 
         driver.get(ADV_WEBSITE);
-        Thread.sleep(8000);
-
 
     }
 
@@ -84,13 +81,12 @@ public class RegressionTest {
 
         WebElement passwdField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/login-modal/div/div/div[3]/sec-form/sec-view[2]/div/input")));
         passwdField.sendKeys(ADV_PASSWORD);
-        Thread.sleep(5000);
 
         WebElement signInButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("sign_in_btnundefined")));
         signInButton.click();
-        Thread.sleep(5000);
 
         //Click on Tablets
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("PopUp")));
         WebElement tabletsLink = wait.until(ExpectedConditions.elementToBeClickable(By.id("tabletsTxt")));
         tabletsLink.click();
 
@@ -103,9 +99,11 @@ public class RegressionTest {
         saveToCartButton.click();
 
         //Go to Checkout
-        WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("checkOutPopUp")));
+        WebElement shoppingCart = wait.until(ExpectedConditions.elementToBeClickable(By.id("shoppingCartLink")));
+        shoppingCart.click();
+        WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("checkOutButton")));
         checkoutButton.click();
-        Thread.sleep(5000);
+
 
         //Checkout
         WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("next_btn")));
@@ -113,18 +111,18 @@ public class RegressionTest {
 
         //Check Price
         WebElement priceText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"userCart\"]/div[2]/label[2]/span")));
-        String expectedPrice = "$478.00";
+        String expectedPrice = "$479.00";
         String actualPrice = priceText.getText();
         Assert.assertEquals(expectedPrice, actualPrice);
 
         // Save screenshot
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileHandler.copy(scrFile, new File("target\\screenshots\\tablet.png"));
+        //File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        //FileHandler.copy(scrFile, new File(".\\target\\screenshots\\tablet.png"));
 
         //Go to Cart to Remove
-        WebElement shoppingCart = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("shoppingCartLink")));
         Actions action = new Actions(driver);
-        action.moveToElement(shoppingCart).build().perform();
+        WebElement shoppingCart2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("shoppingCartLink")));
+        action.moveToElement(shoppingCart2).build().perform();
         action.release();
 
         //Remove Item
@@ -133,16 +131,11 @@ public class RegressionTest {
 
 
         //Sign out User
-        WebElement userButton2 = wait.until(ExpectedConditions.elementToBeClickable(By.id("menuUser")));
-        userButton2.click();
+        //WebElement userButton2 = wait.until(ExpectedConditions.elementToBeClickable(By.id("menuUser")));
+        //userButton2.click();
 
-        WebElement signoutMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"loginMiniTitle\"]/label[3]")));
-        signoutMenu.click();
-        Thread.sleep(3000);
-
-        //Refresh tab
-        driver.navigate().refresh();
-        Thread.sleep(3000);
+        //WebElement signoutMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"loginMiniTitle\"]/label[3]")));
+        //signoutMenu.click();
 
     }
 
