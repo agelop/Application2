@@ -43,7 +43,7 @@ public class RegressionTest {
         driver = new ChromeDriver(options);
 
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 60);
         wait.pollingEvery(10, TimeUnit.SECONDS);
 
         driver.manage().deleteAllCookies();
