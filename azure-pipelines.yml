@@ -10,6 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: octane-start-task@1
+  inputs:
+    OctaneServiceConnection: 'AzureDevOpsPipelineServiceConnection'
+    WorkspaceList: '1002'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
@@ -17,3 +21,7 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: octane-end-task@1
+  inputs:
+    OctaneServiceConnection: 'AzureDevOpsPipelineServiceConnection'
+    WorkspaceList: '1002'
