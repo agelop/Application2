@@ -16,8 +16,8 @@ public class RegressionTest {
 
     // This script was created against AOS 1.1.3.  Since it uses Xpath, you may need to update the script
     // if using against a different version.
-    private static final String ADV_WEBSITE  = "http://nimbusserver.aos.com:8000/#/";
-    //private static final String ADV_WEBSITE  = "http://www.advantageonlineshopping.com";
+    //private static final String ADV_WEBSITE  = "http://nimbusserver.aos.com:8000/#/";
+    private static final String ADV_WEBSITE  = "http://www.advantageonlineshopping.com";
 
     //You will need to have an account created in AOS and will need to supply the credentials
     //These are known defaults as of 2018/sep/12
@@ -35,8 +35,8 @@ public class RegressionTest {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
-        WebDriverManager.chromedriver().forceCache();
-        WebDriverManager.chromedriver().version("2.41").setup();
+        //WebDriverManager.chromedriver().forceCache();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars");
 
