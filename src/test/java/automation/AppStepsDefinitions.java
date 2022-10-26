@@ -51,4 +51,23 @@ public class AppStepsDefinitions {
 		Assert.assertTrue(true);
 	}
 
+	@Given("cliente efetuou compra")
+	public void cliente_compra() {
+		// Write code here that turns the phrase above into concrete actions
+		System.out.println("cliente efetuou compra");
+	}
+
+	@When("selecionou parcelamento")
+	public void parcelamento() {
+		// Write code here that turns the phrase above into concrete actions
+		System.out.println("selecionou parcelamento");
+	}
+
+	@Then("compra parcelada")
+	public void compra_parcelada() {
+		// Write code here that turns the phrase above into concrete actions
+		System.out.println("compra parcelada");
+		Assert.assertTrue(true);
+	}
+
 }
