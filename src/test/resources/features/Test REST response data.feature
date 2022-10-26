@@ -1,6 +1,4 @@
-#Auto generated Octane revision tag
-@TID2001REV0.3.0
-Feature: Testing REST API 
+Feature: Testing REST API
 	Users should have be able to submit requests to web service and receive response
     
 	Scenario Outline: Submit request and receive response code 

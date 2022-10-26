@@ -1,5 +1,3 @@
-#Auto generated Octane revision tag
-@TID1035REV0.6.0
 Feature: Ofertas - Quer pagar quanto
 
 	Scenario Outline: Verifica navigation links no Portal de Ofertas
