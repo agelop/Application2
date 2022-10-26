@@ -1,4 +1,0 @@
-<Mtbx>
-  <Test name="APITest1" path="${WORKSPACE}\APITest1"/>
-  <Test name="APITest2" path="${WORKSPACE}\APITest2"/>
-</Mtbx>
