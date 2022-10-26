@@ -2,21 +2,36 @@ node {
     def mvnHome
 
     stage('Preparation') {
-        git 'https://github.com/agelop/selenium-java-framework.git'
+        echo 'Preparing Project Workarea...'
+        git 'https://github.com/agelop/Application2.git'
     }
 
     stage('Build') {
-        bat "mvn clean package -DskipTests=true"
+        echo 'Building the Project...'
+        build 'aos_build'
     }
 
-    stage('Test Execution') {
-        try {
-            bat "mvn test -Pweb-execution -Dtarget=local -Dsuite=local -Dtestng.dtd.http=true"
-        } catch (Exception e) {
-            currentBuild.result = 'FAILURE'
-        } finally {
-            junit 'target/surefire-reports/TEST-*.xml'
+    stage('Deploy to QA') {
+        echo 'Deployment to QA Environment...'
+    }
 
-        }
+    stage('Unit Tests and Code Coverage') {
+        echo 'Executing Unit Tests and Code Coverage'
+        build 'aos_unit_testing_and_code_coverage'
+    }
+
+    stage('Integration and API Tests') {
+        echo 'Executing Integration and API Tests'
+        build 'aos_integration_testing'
+    }
+
+    stage('Acceptance Tests') {
+        echo 'Executing BDD Acceptance Tests'
+        build 'aos_acceptance_testing'
+    }
+
+    stage('Regression Tests') {
+        echo 'Executing E2E Regression Tests with Selenium'
+        build 'aos_regression_testing_selenium'
     }
 }
