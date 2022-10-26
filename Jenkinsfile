@@ -1,0 +1,22 @@
+node {
+    def mvnHome
+
+    stage('Preparation') {
+        git 'https://github.com/agelop/selenium-java-framework.git'
+    }
+
+    stage('Build') {
+        bat "mvn clean package -DskipTests=true"
+    }
+
+    stage('Test Execution') {
+        try {
+            bat "mvn test -Pweb-execution -Dtarget=local -Dsuite=local -Dtestng.dtd.http=true"
+        } catch (Exception e) {
+            currentBuild.result = 'FAILURE'
+        } finally {
+            junit 'target/surefire-reports/TEST-*.xml'
+
+        }
+    }
+}
