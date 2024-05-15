@@ -5,7 +5,7 @@ on:
     types: [opened, edited, closed, reopened]
   workflow_run:
     # List of workflows to integrate with ALM Octane
-    workflows: [CI]
+    workflows: [Java CI with Maven]
     types: [requested, completed]
 # Node configuration for allowing HTTPS requests
 env: 
@@ -23,14 +23,14 @@ jobs:
         # Config parameters for the integration
         with:
           # ALM Octane connection data
-          octaneUrl: 'http://myOctaneUrl.com'
-          octaneSharedSpace: 1001
-          octaneWorkspace: 1002
+          octaneUrl: 'https://almoctane-eur.saas.microfocus.com/'
+          octaneSharedSpace: 416002
+          octaneWorkspace: 70001
           octaneClientId: ${{secrets.ALM_OCTANE_CLIENT_ID}}
           octaneClientSecret: ${{secrets.ALM_OCTANE_CLIENT_SECRET}}
           # Automatically provided GitHub token
           githubToken: ${{secrets.GITHUB_TOKEN}}
           # The url that the CI Server in ALM Octane will point to
-          serverBaseUrl: https://github.com/MyUser/MyCustomRepository
+          serverBaseUrl: https://github.com/agelop/Application2
           # Pattern for identifying JUnit style report files for test result injection in ALM Octane
           unitTestResultsGlobPattern: "**/*.xml"
