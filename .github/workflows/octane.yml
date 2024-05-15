@@ -1,3 +1,4 @@
+# Teste
 name: OctaneIntegration
 # Events the integration should be triggered on
 on:
@@ -18,7 +19,7 @@ jobs:
     steps:
       - name: GitHub Actions ALM Octane Integration
         # Reference to our public GitHub action
-        uses: MicroFocus/alm-octane-github-actions-integration
+        uses: MicroFocus/alm-octane-github-actions-integration@latest
         id: gitHubActionsIntegration
         # Config parameters for the integration
         with:
