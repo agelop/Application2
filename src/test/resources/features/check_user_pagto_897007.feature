@@ -11,4 +11,4 @@ Feature: Gerenciamento de Usuarios
 			| user  | link     | status |
 			| admin | produtos | OK     |
 			| Homer | servicos | OK     |
-			| Homer | conta    | OK     |
+			| Homer | conta    | NOK    |
