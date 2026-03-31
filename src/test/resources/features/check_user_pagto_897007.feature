@@ -1,5 +1,5 @@
 #Auto generated Octane revision tag
-@TID897007REV0.2.0
+@TID897007REV0.2.2
 Feature: Gerenciamento de Usuarios
 
 	Scenario Outline: Verifica navigation links no Portal de Ofertas
